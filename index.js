@@ -135,7 +135,7 @@ function detectiveEs6Cjs(ast, detectiveOptions) {
  * @return {String[]}
  */
 precinct.paperwork = (filename, options = {}) => {
-  options = { includeCore: true, ...options };
+  options = { includeCore: true, filename, ...options };
 
   const fileSystem = options.fileSystem || fs;
   const content = fileSystem.readFileSync(filename, 'utf8');
