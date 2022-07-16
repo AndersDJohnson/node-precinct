@@ -105,7 +105,10 @@ function precinct(content, options = {}) {
   }
 
   if (theDetective) {
-    dependencies = theDetective(ast, options[type]);
+    dependencies = theDetective(ast, {
+      ...options[type],
+      filename: options.filename,
+    });
   } else {
     debug('no detective found for: %s', type);
   }
